@@ -1,17 +1,34 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from "vue";
+import Vuex from "vuex";
 
-Vue.use(Vuex)
+Vue.use(Vuex);
+let coverIndex = 0;
+const COVER_URL = [
+  require(`../assets/cover1.jpg`),
+  require(`../assets/cover2.jpg`),
+  require(`../assets/cover3.jpg`),
+];
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
   state: {
-  },
-  getters: {
+    isPlaying: false,
+    coverUrl: "", //require("../assets/cover1.jpg")
   },
   mutations: {
+    togglePlay(state, payload) {
+      state.isPlaying = payload;
+      // console.log(payload);
+    },
+    changeCover(state) {
+      // 切换图片用
+      state.coverUrl = COVER_URL[coverIndex++];
+      if (coverIndex >= 3) {
+        coverIndex = 0;
+      }
+    },
   },
-  actions: {
-  },
-  modules: {
-  }
-})
+  actions: {},
+  getters: {},
+});
+
+export default store;
