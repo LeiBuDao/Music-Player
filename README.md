@@ -3,6 +3,8 @@
 > This music-player is based on Vue.
 >
 > Product Design:https://dribbble.com/shots/4240318-Made-with-InVision-Studio-Music-Player
+>
+> <img src="./presentation/music-player.gif" style="zoom: 67%;" />
 
 
 
